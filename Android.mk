@@ -7,9 +7,10 @@ IW_ANDROID_BUILD=y
 NO_PKG_CONFIG=y
 include $(LOCAL_PATH)/Makefile
 
-LOCAL_SRC_FILES := $(patsubst %.o,%.c,$(OBJS))
+LOCAL_SRC_FILES := $(patsubst %.o,%.c,$(OBJS)) $(wildcard $(LOCAL_PATH)/../libnl/lib/*.c) $(wildcard $(LOCAL_PATH)/../libnl/lib/genl/*.c)
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/../libnl/include
 
-LOCAL_CFLAGS += -DCONFIG_LIBNL20
+LOCAL_CFLAGS += -DCONFIG_LIBNL20, -w
 LOCAL_LDFLAGS := -Wl,--no-gc-sections
 #LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_TAGS := eng
