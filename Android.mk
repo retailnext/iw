@@ -13,7 +13,6 @@ LOCAL_CFLAGS += -DCONFIG_LIBNL20
 LOCAL_LDFLAGS := -Wl,--no-gc-sections
 #LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_TAGS := eng
-LOCAL_STATIC_LIBRARIES := libnl
 LOCAL_MODULE := iw
 
 $(IW_SOURCE_DIR)/version.c:
